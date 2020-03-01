@@ -4,21 +4,22 @@ while True:
 | 1-Encrypt   2-Decrypt  |
 ==========================\n"""))
     if ch == 1:
-        shift = int(input("Key="))
         text = input("text:")
+        print("!!! KEY MUST BE NUMBER !!!\n")
+        shift = int(input("Key :"))
         print("\n!!Encrypted!!\n")
         for x in text: 
             alpha = ord(x)+shift
             if alpha > ord('z'):
                 alpha -=26
-            print(chr(alpha),end="")
+            print("Text:",chr(alpha),end="")
 
     elif ch == 2:
-        shift = int(input("Key="))
         text=input("text:")
+        shift = int(input("Key :"))
         print("\n!!Decrypted!!\n")
         for x in text: 
             alpha = ord(x)-shift
-            if alpha > ord('z'):
-                alpha +=26
-            print(chr(alpha),end="")
+            if alpha < ord('a'):
+                alpha += 26
+            print("Text:",chr(alpha),end="")
